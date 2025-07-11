@@ -10,7 +10,9 @@ Code for SIGGRAPH 2025 (ToG) paper "Bernstein Bounds for Caustics"
 
 The implementation includes the precomputation end and the rendering end. 
 
-- Precomputation: We have Python implementation for all cases, which is easy to run. Only single scattering case has C++ implementation (integrated in mitsuba). Double scattering is speeded up using Numba (`batch/`). 
+- Precomputation: We have Python implementation for all cases, which is easy to run. 
+    - Only single scattering case has C++ implementation (integrated in mitsuba). 
+    - Double scattering is speeded up using Numba (`batch/`), which, unfortunately requires several minites to compile each time and we currently failed to cache the compiled file properly due to some limitations of Numba in handling complex global objects.
 
 - Rendering: We based on the code of specular polynomials. I copied the building instructions below:
 
@@ -34,9 +36,13 @@ I plan to release code for almost all figures. Unfortunately, some experiments r
 
 - **Fig. 10: ablation on multi-sample estimators.** Please run `test/fig_plane/cmp_sample.py`. 
 
-- **Fig. 13 (Top): main experiment (single reflection).** Please run `test/fig_plane/test.py`.  
+- **Fig. 13 (top): main experiment (single reflection).** Please run `test/fig_plane/test.py`.  
 
-- **Fig. 13 (Bottom): main experiment (single refraction).** Please run `test/fig_sphere/test.py`.  
+- **Fig. 13 (bottom): main experiment (single refraction).** Please run `test/fig_sphere/test.py`.  
+
+- **Fig. 14 (top): main experiment (double refraction).** Modify `batch/alias.py` according to `test/fig_slab/alias.md` and then run `batch/run_mesh.py` to generate the distribution file. Finaly, run `test/fig_slab/test.py`.
+
+- **Fig. 14 (bottom): main experiment (double refraction).** Modify `batch/alias.py` according to `test/fig_diamond/alias.md` and then run `batch/run_mesh.py` to generate the distribution file. Finaly, run `test/fig_diamond/test.py`.
 
 - **Fig. 20: "failure" case (single refraction).** Please run `test/fig_pool/test.py`.
 
