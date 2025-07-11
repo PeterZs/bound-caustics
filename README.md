@@ -25,7 +25,7 @@ The implementation includes the precomputation end and the rendering end.
 
 ## Reproduce
 
-I plan to release code for almost all figures this time. Unfortunately, some experiments rely on local code modifications, so putting them all together needs time.
+I plan to release code for almost all figures. Unfortunately, some experiments rely on local code modifications, so putting them all together needs time.
 
 - **Fig. 09: demonstration of how to convert position/irradiance bounds into distributions.** In the directory `2d/fig09`, run `run_main_top/bottom.py`. You can choose the `_latex` variant to generate the paper figure, which however needs a latex environment. 
 
@@ -34,8 +34,12 @@ I plan to release code for almost all figures this time. Unfortunately, some exp
 
 - **Fig. 10: ablation on multi-sample estimators.** Please run `test/fig_plane/cmp_sample.py`. 
 
-- **Fig. 13 (Top): main experiment (single reflection).** Please run `test/fig_plane/test.py`. 
+- **Fig. 13 (Top): main experiment (single reflection).** Please run `test/fig_plane/test.py`.  
+
+- **Fig. 13 (Bottom): main experiment (single refraction).** Please run `test/fig_sphere/test.py`.  
+
+- **Fig. 20: "failure" case (single refraction).** Please run `test/fig_pool/test.py`.
 
 ## Acknowledgement
 
-Some scenes are modified from [SMS](https://github.com/tizian/specular-manifold-sampling). The implementation builds upon [Mbglints](https://github.com/wangningbei/mbglints) and [CyPolynomials](http://codebase.cemyuksel.com/code.html). We sincerely thank the authors for kindly release their code and scenes, as well as their great works.
+Some scenes are modified from [SMS](https://github.com/tizian/specular-manifold-sampling). The implementation builds upon [Mbglints](https://github.com/wangningbei/mbglints) and [CyPolynomials](http://codebase.cemyuksel.com/code.html). We sincerely thank the authors for kindly release their code and scenes, as well as their great works. We also include a locally modified version of https://github.com/Mira-13/figure-gen.
