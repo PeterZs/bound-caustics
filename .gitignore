@@ -1,1 +1,15 @@
 *.mip
+
+# Python cache
+__pycache__/
+**/__pycache__/
+
+# Experiment outputs
+results/
+test/**/results/
+
+# Runtime logs from test/labcommon.py
+test/**/results/*_log.txt
+test/**/results/*_err.txt
+test/**/*.log
+test/**/pathcut_log.txt
