@@ -13,3 +13,4 @@ test/**/results/*_log.txt
 test/**/results/*_err.txt
 test/**/*.log
 test/**/pathcut_log.txt
+*.txt

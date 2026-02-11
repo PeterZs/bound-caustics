@@ -28,7 +28,7 @@
     <default name="SHADING_NORMAL" value="true"/>
     <default name="SHADING_NORMAL2" value="true"/>
     <default name="CHAIN_TYPE" value="2"/>
-    <default name="REFRACTION_2D" value="false"/>
+    <default name="REFRACTION_2D" value="true"/>
     <default name="dump_bound" value="0"/>
 	<integrator type="$integrator">
 		<integer name="sampleCount" value="$spp"/>
