@@ -110,6 +110,16 @@ add_compile_definitions(
 add_compile_options(/openmp)
 add_link_options(/FIXED:NO /SUBSYSTEM:CONSOLE /NODEFAULTLIB:LIBCMT /MANIFEST)
 
+if(MSVC)
+    # Enable stronger vectorization/optimization for paper-style benchmark builds.
+    add_compile_options(
+        "$<$<CONFIG:Release>:/arch:AVX2>"
+        "$<$<CONFIG:Release>:/fp:fast>"
+        "$<$<CONFIG:Release>:/Oi>"
+        "$<$<CONFIG:Release>:/Ot>"
+    )
+endif()
+
 add_subdirectory(src/libcore)
 add_subdirectory(src/librender)
 add_subdirectory(src/libhw)

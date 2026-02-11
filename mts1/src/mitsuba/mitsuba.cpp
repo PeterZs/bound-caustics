@@ -38,6 +38,12 @@
 #include <stdexcept>
 #include <boost/algorithm/string.hpp>
 
+#if defined(_MSC_VER)
+// 4D refraction bounder in this fork uses very large stack-resident
+// polynomial buffers during precomputation.
+#pragma comment(linker, "/STACK:8589934592")
+#endif
+
 #if defined(__WINDOWS__)
 #include <mitsuba/core/getopt.h>
 #include <winsock2.h>
